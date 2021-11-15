@@ -12,8 +12,7 @@ export default class DataEntryForm extends Component {
             address_2: '',
             city: '',
             postal: '',
-            province: '',
-            submitForm: false
+            province: ''
         }
     }
 
@@ -30,13 +29,12 @@ export default class DataEntryForm extends Component {
     readFormValue = e => {
         e.preventDefault();
         console.log(JSON.stringify(this.state));
-        this.setState({submitForm:true})
     }
     
     render() {
         return (
-            <div className="border-4 container">
-                <form onSubmit={this.readFormValue} className="bg-red-400">
+            <div className="border-4 container bg-red-400">
+                <form onSubmit={this.readFormValue} className="">
 
                     <h1 className="text-center">
                         Data Entry Form
@@ -56,14 +54,14 @@ export default class DataEntryForm extends Component {
                     <div className="grid grid-cols-1">
                         <div className="flex flex-col items-center">
                             <label>Address 1</label>
-                            <input className="place-self-stretch" placeholder="1234 Main St" name="address_1" type="text" onChange={this.readName}></input>
+                            <input className="" placeholder="1234 Main St" name="address_1" type="text" onChange={this.readName}></input>
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1">
                         <div className="flex flex-col items-center">
                             <label>Address 2</label>
-                            <input className="flex flex-grow" placeholder="Apartment, studio, or floor" name="address_2" type="text" onChange={this.readName}></input>
+                            <input className="" placeholder="Apartment, studio, or floor" name="address_2" type="text" onChange={this.readName}></input>
                         </div>
                     </div>
 
