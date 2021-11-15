@@ -12,7 +12,8 @@ export default class DataEntryForm extends Component {
             address_2: '',
             city: '',
             postal: '',
-            province: ''
+            province: '',
+            submitForm: false
         }
     }
 
@@ -29,77 +30,71 @@ export default class DataEntryForm extends Component {
     readFormValue = e => {
         e.preventDefault();
         console.log(JSON.stringify(this.state));
+        this.setState({submitForm:true})
     }
     
     render() {
         return (
-            <div className=" border-4 container">
+            <div className="border-4 container">
                 <form onSubmit={this.readFormValue} className="bg-red-400">
 
                     <h1 className="text-center">
                         Data Entry Form
                     </h1>
 
-                    <div className="grid grid-cols-1">
-                        <div className="flex flex-row justify-center gap-4">
-                            <div className="flex flex-col items-center">
-                                <label>Email</label>
-                                <input placeholder="Enter email" name="email" type="text" onChange={this.readName}></input>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <label>Name</label>
-                                <input placeholder="Full Name" name="name" type="text" onChange={this.readName}></input>
-                            </div>
+                    <div className="flex flex-row justify-center gap-4">
+                        <div className="flex flex-col items-center">
+                            <label>Email</label>
+                            <input className="" placeholder="Enter email" name="email" type="text" onChange={this.readName}></input>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <label>Name</label>
+                            <input className="" placeholder="Full Name" name="name" type="text" onChange={this.readName}></input>
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1">
                         <div className="flex flex-col items-center">
                             <label>Address 1</label>
-                            <input placeholder="1234 Main St" name="address_1" type="text" onChange={this.readName}></input>
+                            <input className="place-self-stretch" placeholder="1234 Main St" name="address_1" type="text" onChange={this.readName}></input>
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1">
-                        <div className="flex flex-row justify-center">
-                            <div className="flex flex-col items-center">
-                                <label>Address 2</label>
-                                <input placeholder="Apartment, studio, or floor" name="address_2" type="text" onChange={this.readName}></input>
-                            </div>
+                        <div className="flex flex-col items-center">
+                            <label>Address 2</label>
+                            <input className="flex flex-grow" placeholder="Apartment, studio, or floor" name="address_2" type="text" onChange={this.readName}></input>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1">
-                        <div className="flex flex-row justify-center">
-                            
-                            <div className="flex flex-col items-center space-x-4">
-                                <label>City</label>
-                                <input placeholder="" name="city" type="text" onChange={this.readName}></input>
-                            </div>
+                    <div className="flex flex-row justify-center">
+                        
+                        <div className="flex flex-col items-center space-x-4">
+                            <label>City</label>
+                            <input placeholder="" name="city" type="text" onChange={this.readName}></input>
+                        </div>
 
-                            <div className="flex flex-col items-center space-x-4">
-                                <label>Province</label>
-                                <select name="province" id="province" onChange={this.readName}>
-                                    <option value="Alberta">Alberta</option>
-                                    <option value="British Columbia">British Columbia</option>
-                                    <option value="Manitoba">Manitoba</option>
-                                    <option value="New brunswick">New brunswick</option>
-                                    <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-                                    <option value="Nova Scotia">Nova Scotia</option>
-                                    <option value="Ontario">Ontario</option>
-                                    <option value="Prince Edward Island">Prince Edward Island</option>
-                                    <option value="Quebec">Quebec</option>
-                                    <option value="Saskatchewan">Saskatchewan</option>
-                                </select>
-                            </div>
+                        <div className="flex flex-col items-center space-x-4">
+                            <label>Province</label>
+                            <select name="province" id="province" onChange={this.readName}>
+                                <option value="Alberta">Alberta</option>
+                                <option value="British Columbia">British Columbia</option>
+                                <option value="Manitoba">Manitoba</option>
+                                <option value="New brunswick">New brunswick</option>
+                                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                                <option value="Nova Scotia">Nova Scotia</option>
+                                <option value="Ontario">Ontario</option>
+                                <option value="Prince Edward Island">Prince Edward Island</option>
+                                <option value="Quebec">Quebec</option>
+                                <option value="Saskatchewan">Saskatchewan</option>
+                            </select>
+                        </div>
 
-                            <div className="flex flex-col items-center space-x-4">
-                                <label>Postal Code</label>
-                                <input placeholder="" name="postal" type="text" onChange={this.readName}></input>
-                            </div>
+                        <div className="flex flex-col items-center space-x-4">
+                            <label>Postal Code</label>
+                            <input placeholder="" name="postal" type="text" onChange={this.readName}></input>
                         </div>
                     </div>
-
 
                     <div className="grid grid-cols-1">
                         <div className="flex flex-col items-center">
