@@ -1,5 +1,4 @@
 import DataEntryForm from './DataEntryForm';
-// import './App.css';
 
 function App() {
   return (
